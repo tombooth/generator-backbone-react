@@ -4,7 +4,7 @@
 window.<%= _.camelize(appname) %> = {
     Models: {},
     Collections: {},
-    Views: {},
+    Components: {},
     Routers: {},
     init: function () {
         console.log('Hello from Backbone!');
@@ -12,8 +12,7 @@ window.<%= _.camelize(appname) %> = {
 };
 
 /* Order and include as you please. */
-require('.tmp/scripts/templates');
-require('app/scripts/views/*');
+require('app/scripts/components/*');
 require('app/scripts/models/*');
 require('app/scripts/controllers/*');
 require('app/scripts/routers/*');

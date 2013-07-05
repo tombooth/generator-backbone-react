@@ -9,7 +9,6 @@ function Generator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.testFramework = this.options['test-framework'] || 'mocha';
-  this.templateFramework = this.options['template-framework'] || 'lodash';
   this.hookFor(this.testFramework, {
     as: 'app',
     options: {
@@ -131,13 +130,10 @@ Generator.prototype.writeIndex = function writeIndex() {
 
   var vendorJS = [
     'bower_components/jquery/jquery.js',
+    'bower_components/react/react.js',
     'bower_components/underscore/underscore.js',
     'bower_components/backbone/backbone.js'
   ];
-
-  if (this.templateFramework === 'handlebars') {
-    vendorJS.push('bower_components/handlebars/handlebars.js')
-  }
 
   this.indexFile = this.appendScripts(this.indexFile, 'scripts/vendor.js', vendorJS);
 
